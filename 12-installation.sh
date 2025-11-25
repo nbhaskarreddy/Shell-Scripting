@@ -13,7 +13,7 @@ else
     echo "Run script with root user"
 fi
 
-#step1
+#step1 to install nginx
 dnf install nginx -y
 # $? if will provide output for last used command
 if [ $? -ne 0 ]; then 
@@ -22,7 +22,7 @@ if [ $? -ne 0 ]; then
 else 
     echo "Successful installing the nginx"
 fi
-#step2
+#step2 to install mysql
 dnf install mysql -y
 if [ $? -ne 0 ]; then 
     echo "Error:: installing ... mysql"
@@ -30,7 +30,7 @@ if [ $? -ne 0 ]; then
 else 
     echo "Successful installing the mysql"
 fi
-#step3
+#step3 to install python3
 dnf install python3 -y
 if [ $? -ne 0 ]; then 
     echo "Error:: installing ... python3"
