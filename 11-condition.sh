@@ -14,7 +14,7 @@ fi
 
 echo "Please enter the number"
 
-read Number2
+read  -s Number2
 if [ $(($Number2%2)) -eq 0 ]; then
     echo "$Number2 is Even"
 else 
