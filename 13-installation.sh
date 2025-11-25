@@ -3,8 +3,8 @@
 USERID=$(id -u)
 
 if [ $USERID -ne 0]; then
-    echo "Please run script with root user"
-    exit 127
+    echo "Error::Run script with root user"
+    exit 1
 fi
 
 validate() {
@@ -17,10 +17,10 @@ fi
 }
 
 dnf install nginx -y
-validate $? nginx
+validate $? "nginx"
 
 dnf install mysql -y
-validate $? Mysql
+validate $? "Mysql"
 
 dnf install python3 -y
-validate $? Python3
+validate $? "Python3"
