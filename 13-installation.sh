@@ -2,13 +2,13 @@
 
 USERID=$(id -u)
 
-if [ $USERID -ne 0]; then
+if [ $USERID -ne 0 ]; then
     echo "Error::Run script with root user"
     exit 1
 fi
 
 validate() {
-    if [ $1 -ne 0]; then
+    if [ $1 -ne 0 ]; then
     echo "Failure in installing... $2"
     exit 1
 else 
