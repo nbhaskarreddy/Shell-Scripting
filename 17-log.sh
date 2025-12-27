@@ -18,7 +18,6 @@ if [ $USER_ID -ne 0 ]; then
     exit 1 #if failure is other than 0 we will stop executing the script
 fi
 
-dnf list installed mysql &>>$LOG_FILE
 
 validate() {
     if [ $1 -ne 0]; then
@@ -29,6 +28,7 @@ validate() {
     fi    
 }
 
+dnf list installed mysql &>>$LOG_FILE
 if [ $? -ne 0 ]; then
     dnf install mysql -y &>>$LOG_FILE
     validate $? "MYSQL"
