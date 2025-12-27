@@ -26,6 +26,7 @@ validate() {
         exit 1
     else 
         echo -e "Installing...$2 $R Success $N"  | tee -a $LOG_FILE  
+    fi    
 }
 
 if [ $? -ne 0 ]; then
