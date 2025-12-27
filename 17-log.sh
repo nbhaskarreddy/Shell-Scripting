@@ -33,7 +33,7 @@ if [ $? -ne 0 ]; then
     dnf install mysql -y &>>$LOG_FILE
     validate $? "MYSQL"
 else 
-    echo -e "MYSQL is already available... $Y SKIPPING $N"
+    echo -e "MYSQL is already available... $Y SKIPPING $N" | tee -a $LOG_FILE
 fi    
 
 
